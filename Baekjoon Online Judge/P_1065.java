@@ -8,22 +8,26 @@ public class P_1065 {
 		int cnt = 0;
 
 		for (int i = 1; i <= N; i++) {
-			if(calc(i)==true)cnt++;
-			if(i==1000)cnt--;
+			if (calc(i) == true)
+				cnt++;
+			if (i == 1000)
+				cnt--;
 		}
-		
+
 		System.out.println(cnt);
 	}
-	
+
 	static boolean calc(int i) {
 		int thousand = i / 1000;
 		int hundred = (i / 100) % 10;
 		int ten = (i / 10) % 10;
 		int one = i % 10;
-		
-		if(i<=99) return true;
+
+		if (i <= 99)
+			return true;
 		else {
-			if(hundred-ten==ten-one) return true;
+			if (hundred - ten == ten - one)
+				return true;
 		}
 		return false;
 	}
